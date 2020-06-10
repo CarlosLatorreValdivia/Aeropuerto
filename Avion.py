@@ -1,50 +1,69 @@
 class Avion:
-    def __init__(self,modelo,tamano,aerolinea,destino,pasajeros,tipo):
-        self.__modelo = modelo
-        self.__tamano = tamano
-        self.__aerolinea = aerolinea
-        self.__destino = destino
-        self.__pasajeros = pasajeros
-        self.__tipo = tipo
-        
-    @property
-    def plane_Complete(self):
-        return f'El tipo de avión es un {modelo} con un tamaño de {tamano} de la aerolínea, con destino a {destino}. Contiene {pasajeros}.'
-    
-    @property
-    def volando(self):
-        return f'El avión se ecnuentra en vuelo.'
-    
-    
-    @property
-    def despegar(self):
-        return f'El avión con destino a {destino} está listo para despegar.'
-    
-    
-    @property
-    def aterrizar(self):
-        return f'El avión con destino a {destino} se prepara para aterrizar.'
-    
-    
-    @property
-    def esperar(self):
-        return f' El avión con destino a {destino} se encuentra en espera.'
-    
-    @property
-    def plane_Type(self,tipo):
-        if (tipo =='Carga') or (tipo == 'carga'):
-            return f'El tipo de avión es un avión de carga. No transporta pasajeros'
-        else:
-            return f'El tipo de avión es de transporte de pasajeros'
-    
-    
-    @property
-    def abordaje(self):
-        return f'El avión se encuentra en abordaje.'
-    
-    
-    @property
-    def desembarque(self):
-        return f'El avión está desembarcando.'
-    
-    
+	def __init__(self, modelo, tamano, aerolinea, destino, pasajeros, horaSalida):
+		self.__modelo = modelo
+		self.__tamano = tamano
+		self.__aerolinea = aerolinea
+		self.__destino = destino
+		self.__pasajeros = pasajeros
+		self.__horaSalida = horaSalida
+		self.__retraso = 0
+
+	@property
+	def modelo(self):
+		return self.__modelo
+
+	@property
+	def tamano(self):
+		return self.__tamano
+
+	@property
+	def aerolinea(self):
+		return self.__aerolinea
+	
+	@property
+	def destino(self):
+		return self.__destino
+
+	@property
+	def pasajeros(self):
+		return self.__pasajeros
+
+	@property
+	def horaSalida(self):
+		return self.__horaSalida
+
+	@property 
+	def retraso(self):
+		return self.__retraso
+
+	@retraso.setter
+	def retraso(self, ret):
+		self.__retraso = ret
+
+	def aterrizar(self):
+		return f'El vuelo de {self.__modelo} con destino a {self.__destino} ha aterrizado'
+
+	def despegar(self):
+		return f'El vuelo de {self.__modelo} con destino a {self.__destino} ha despegado'
+
+	def abordar(self):
+		return f'{self.pasajeros} pasajeros han abordado'
+
+	def desistir(self):
+		return f'{self.pasajeros} pasajeros han salido'
+
+	def esperar(self, tiempo):
+		return f'El avion dirigido a {self.destino} esperara {tiempo} minutos'
+
+	def __str__(self):
+		return f'({self.modelo}, {self.tamano}, {self.pasajeros}) dirigido a {self.destino} a las {self.horaSalida} tiene {self.retraso} minutos de retraso'
+
+if __name__ == '__main__':
+	a1 = Avion('Boeing 787', 3, 'Aeromexico', 'DE', 100, 700)
+	a2 = Avion('G-BXEX', 1, 'Aeromexico', 'CDMX', 2, 800)	
+	print(a1)
+	print(a1.modelo)
+	print(a2.tamano)
+	print(a1.retraso)
+	a1.retraso = 60
+	print(a1.retraso)
