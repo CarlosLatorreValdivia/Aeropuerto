@@ -1,3 +1,8 @@
+'''
+		Carlos Latorre Valdivia A01379354
+		Eduardo Aguilar Chias A01749375
+'''
+
 class Pista:
 	def __init__(self, nPista, tamano, disponibilidad=True):
 		self.__nPista = nPista		

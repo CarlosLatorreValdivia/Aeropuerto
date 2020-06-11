@@ -1,3 +1,8 @@
+'''
+		Carlos Latorre Valdivia A01379354
+		Eduardo Aguilar Chias A01749375
+'''
+
 class Avion:
 	def __init__(self, modelo, tamano, aerolinea, destino, pasajeros, horaSalida):
 		self.__modelo = modelo

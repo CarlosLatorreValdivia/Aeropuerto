@@ -1,3 +1,8 @@
+'''
+		Carlos Latorre Valdivia A01379354
+		Eduardo Aguilar Chias A01749375
+'''
+
 import Pistas as p
 import Avion as av
 
@@ -41,7 +46,8 @@ class TorreControl:
 
 	@operador.setter
 	def operador(self, op):
-		self.operador = op
+		self.__operador = op
+
 
 	def autoPista(self):
 		for i in range(0, self.rango):
